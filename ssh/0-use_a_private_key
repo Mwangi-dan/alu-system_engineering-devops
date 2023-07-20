@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script that uses ssh to connect server using prvate keywith user ubuntu
+ssh -i ~/.ssh/school user@ubuntu
