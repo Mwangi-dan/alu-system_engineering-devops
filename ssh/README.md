@@ -1,5 +1,5 @@
-#SSH
-##Learning objectives
+# SSH
+## Learning objectives
 - What is a server
 - Where servers usually live
 - What is SSH
