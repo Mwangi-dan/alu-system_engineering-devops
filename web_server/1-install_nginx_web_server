@@ -2,5 +2,5 @@
 # Installing Nginx and configuring it
 sudo apt-get -y install nginx
 sudo sed -i 's/^(.*listen\s\+\)80;\1/' /etc/nginx/nginx.conf
-sudo servic nginx restart
-echo "hOlberton School" | sudo tee /var/www/html/index.html
+sudo service nginx restart
+echo "Holberton School" | sudo tee /var/www/html/index.html
