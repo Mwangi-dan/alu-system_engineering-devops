@@ -2,6 +2,7 @@
 # Installing Nginx and configuring it
 apt-get update
 apt-get install -y nginx
+
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Holberton School" > /etc/www/html/index.html
