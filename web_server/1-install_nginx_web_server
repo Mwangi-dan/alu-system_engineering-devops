@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Installing Nginx and configuring it
 apt-get update
-sudo apt-get install -y nginx
+apt-get install -y nginx
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
 echo "Holberton School" > /etc/www/html/index.html
@@ -11,6 +11,6 @@ printf %s "server {
 	root	/etc/nginx/html;
 	index	index.html index.htm;
 }
-" >/etc/nginx/sites-available/default
+" > /etc/nginx/sites-available/default
 
 service nginx restart
