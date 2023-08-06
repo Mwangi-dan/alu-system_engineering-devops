@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script that uses ssh to connect to server using private keywith user ubuntu
+if [ $# -lt 1 ]; then 
+	echo "Usage: connect_to_ssh_ip_address IP_ADDRESS"
+	exit 1
+fi
+ssh -i ~/.ssh/school ubuntu@"$1"
