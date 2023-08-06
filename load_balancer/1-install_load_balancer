@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Installing and configuring load balancer
+apt-get update
+apt-get install --no-install-recommends software-properties-common
+add-apt-repository ppa:vbernat/haproxy-2.0
+apt-get install -y haproxy=2.0.\*
+
+CONFIG_FILE="/etc/haproxy/haproxy.cfg"
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+printf "\nlisten 5722-web-01
+        bind 0.0.0.0:80
+        mode http
+        stats enable
+        server 5722-web-01 3.80.137.253 check
+        server 5722-web-01 54.204.94.209 check
+" >> "$CONFIG_FILE"
+
+sudo service haproxy restart
