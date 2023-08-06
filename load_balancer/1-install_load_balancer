@@ -18,4 +18,4 @@ printf "\nlisten 5722-lb-01
         server 5722-web-02 54.204.94.209:80 check
 " >> "$CONFIG_FILE"
 
-sudo service haproxy restart
+sudo service haproxy start
