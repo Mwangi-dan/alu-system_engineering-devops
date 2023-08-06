@@ -11,14 +11,14 @@ echo "ENABLED=1" >> /etc/default/haproxy
 
 printf %s "
 frontend haproxynode
-\tbind *:80
-\tmode http
-\tdefault_backend backendnodes
+	bind *:80
+	mode http
+	default_backend backendnodes
 
 backend backendnodes
-\tbalance roundrobin
-\tserver 5722-web-01 3.80.137.253:80 check
-\tserver 5722-web-02 54.204.94.209:80 check
+	balance roundrobin
+	server 5722-web-01 3.80.137.253:80 check
+	server 5722-web-02 54.204.94.209:80 check
 " >> "$CONFIG_FILE"
 
 sudo service haproxy start
