@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Doubling the number of web servers and making them noth identical
+SERVER_NAME=$(hostname)
+sed -i "/server_name _;/a \\\n\tadd_header X-Served-By $SERVER_NAME;" /etc/nginx/sites-available/default
+sudo service nginx restart
