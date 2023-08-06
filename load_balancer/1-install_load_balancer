@@ -13,9 +13,9 @@ echo "
 frontend haproxynode
 	bind *:80
 	mode http
-	default_backend backendnodes
+	default_backend backendservers
 
-backend backendnodes
+backend backendservers
 	balance roundrobin
 	server 5722-web-01 3.80.137.253:80 check
 	server 5722-web-02 54.204.94.209:80 check
