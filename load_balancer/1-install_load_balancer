@@ -9,13 +9,16 @@ CONFIG_FILE="/etc/haproxy/haproxy.cfg"
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
-printf "\nlisten 5722-lb-01
-        bind *:80
-        mode http
-        balance roundrobin
-	option httpclose
-        server 5722-web-01 3.80.137.253:80 check
-        server 5722-web-02 54.204.94.209:80 check
+printf %s "
+frontend haproxynode
+    bind *:80
+    mode http
+    default_backend backendnodes
+
+backend backendnodes
+    balance roundrobin
+    server 824-web-01 34.73.37.244:80 check
+    server 824-web-02 34.74.25.167:80 check
 " >> "$CONFIG_FILE"
 
 sudo service haproxy start
