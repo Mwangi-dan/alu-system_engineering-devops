@@ -9,7 +9,7 @@ CONFIG_FILE="/etc/haproxy/haproxy.cfg"
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
-printf "\nlisten 5722-web-01
+printf "\nlisten web-01
         bind 0.0.0.0:80
         mode http
         stats enable
