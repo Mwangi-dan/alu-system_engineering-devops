@@ -9,12 +9,13 @@ CONFIG_FILE="/etc/haproxy/haproxy.cfg"
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
-printf "\nlisten web-01
-        bind 0.0.0.0:80
+printf "\nlisten 5722-lb-01
+        bind *:80
         mode http
-        stats enable
-        server 5722-web-01 3.80.137.253 check
-        server 5722-web-01 54.204.94.209 check
+        balance roundrobin
+	option httpclose
+        server 5722-web-01 3.80.137.253:80 check
+        server 5722-web-02 54.204.94.209:80 check
 " >> "$CONFIG_FILE"
 
 sudo service haproxy restart
