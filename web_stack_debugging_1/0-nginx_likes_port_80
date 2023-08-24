@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Debugging NGINX to connect to port 80
-sed -i "server {/a \\ \nlisten 80 default_server" /etc/nginx/sites-available/default
+sed -i "s/listen 8080 default_server;/listen 80 default_server;/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
