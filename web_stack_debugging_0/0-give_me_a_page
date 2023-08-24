@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Debugging 'empty reply' from apache server
+echo 'Hello Holberton' > /etc/apache2.conf
+sudo service apache restart
